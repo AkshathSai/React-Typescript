@@ -1,4 +1,5 @@
 import React, {useRef} from "react";
+import classes from "./AddTodo.module.css";
 
 /**
  * onAddTodo is a function that takes string input and returns void,
@@ -28,9 +29,9 @@ const AddTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className={classes.form}>
             <label htmlFor='text'>Todo Text</label>
-            <input type='text' id='text'/>
+            <input type='text' id='text' ref={todoFormTextInputRef}/>
             <button>Add Todo</button>
         </form>
     );
