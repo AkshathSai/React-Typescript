@@ -1,7 +1,17 @@
+import {useRef} from "react";
+
 const AddTodo = () => {
+
+    const todoFormTextInputRef = useRef<HTMLInputElement>(null);
 
     const submitHandler = (event: React.FormEvent) => {
         event.preventDefault();
+
+        const enteredText = todoFormTextInputRef.current!.value;
+        if (enteredText.trim().length === 0) {
+            return;
+        }
+
     };
 
     return (
