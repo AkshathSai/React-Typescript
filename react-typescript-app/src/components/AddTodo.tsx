@@ -7,6 +7,10 @@ const AddTodo = () => {
     const submitHandler = (event: React.FormEvent) => {
         event.preventDefault();
 
+        /** todoFormTextInputRef.current?.value/todoFormTextInputRef.current!.value
+         * ! - when confident that value will not be null
+         * ? - when unsure
+         */
         const enteredText = todoFormTextInputRef.current!.value;
         if (enteredText.trim().length === 0) {
             return;
