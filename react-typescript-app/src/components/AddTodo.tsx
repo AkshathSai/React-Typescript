@@ -1,6 +1,14 @@
-import {useRef} from "react";
+import React, {useRef} from "react";
 
-const AddTodo = () => {
+/**
+ * onAddTodo is a function that takes string input and returns void,
+ *
+ * Syntax for defining a function pointer in typescript:
+ * functionName: (function param: datatype of the Param) => return type
+ *
+ * onAddTodo: (text: string) => void
+ */
+const AddTodo: React.FC<{onAddTodo: (text: string) => void}> = (props) => {
 
     const todoFormTextInputRef = useRef<HTMLInputElement>(null);
 
@@ -16,6 +24,7 @@ const AddTodo = () => {
             return;
         }
 
+        props.onAddTodo(enteredText);
     };
 
     return (
