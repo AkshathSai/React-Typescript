@@ -9,7 +9,7 @@ function App() {
     <div>
       <Todos items={todos} />
     </div>
-  ); 
+  );
 }
 
 export default App;
